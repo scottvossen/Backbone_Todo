@@ -38,14 +38,17 @@ var TodoView = Backbone.View.extend({
 
   edit: function() {
     // executed when todo label is double clicked
+    alert("edit");
   },
 
   close: function() {
     // executed when todo loses focus
+    alert("close");
   },
 
   updateOnEnter: function( e ) {
     // executed on each keypress when in todo edit mode, 
     // but we'll wait for enter to get in action
+    alert("updateOnEnter");
   }
 });
