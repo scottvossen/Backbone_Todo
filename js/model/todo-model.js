@@ -5,7 +5,7 @@ var Todo = Backbone.Model.extend({
     completed: false
   },
 
-  validate: function(attributes){
+  validate: function(attributes) {
     if (attributes.title === undefined) {
         return "Remember to set a title for your todo.";
     }
@@ -15,5 +15,5 @@ var Todo = Backbone.Model.extend({
     this.on("invalid", function(model, error){
         console.log(error);
     });
-  }
+  },
 });
