@@ -3,9 +3,9 @@ var TodoView = Backbone.View.extend({
   tagName:  'li',
 
   // Cache the template function for a single item.
-  // todoTpl: _.template( $('#todo-template').html() ),
-  // todoTpl: Handlebars.compile( $("#todo-template").html() ),
-  todoTpl: TemplateHelper.loadTemplate('todo-template'),
+  // template: _.template( $('#todo-template').html() ),
+  // template: Handlebars.compile( $("#todo-template").html() ),
+  template: TemplateHelper.loadTemplate('todo-template'),
 
   events: {
     'dblclick label': 'edit',
@@ -24,9 +24,9 @@ var TodoView = Backbone.View.extend({
 
   // Re-render the titles of the todo item.
   render: function() {
-    this.$el.html( this.todoTpl(this.model.toJSON()));
+    this.$el.html( this.template(this.model.toJSON()));
     // $el here is a reference to the jQuery element 
-    // associated with the view, todoTpl is a reference
+    // associated with the view, template is a reference
     // to an Underscore template and toJSON() returns an 
     // object containing the model's attributes
     // Altogether, the statement is replacing the HTML of
