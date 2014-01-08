@@ -8,20 +8,13 @@
 <body>
   <div id="todo">
   </div>
-  <script type="text/template" id="todo-template">
-    <div class="view">
-      <input class="toggle" type="checkbox" {{#if completed}} "checked" {{/if}}>
-      <label>{{title}}</label>
-      <button class="destroy"></button>
-    </div>
-    <input class="edit" value="{{title}}">
-  </script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.3.0/handlebars.min.js"></script>
+  <script src="js/template-helper.js"></script>
   <script src="js/model/todo-model.js"></script>
   <script src="js/view/todo-view.js"></script>
-  <script src="js/demo.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

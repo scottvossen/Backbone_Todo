@@ -4,7 +4,8 @@ var TodoView = Backbone.View.extend({
 
   // Cache the template function for a single item.
   // todoTpl: _.template( $('#todo-template').html() ),
-  todoTpl: Handlebars.compile( $("#todo-template").html() ),
+  // todoTpl: Handlebars.compile( $("#todo-template").html() ),
+  todoTpl: TemplateHelper.loadTemplate('todo-template'),
 
   events: {
     'dblclick label': 'edit',
