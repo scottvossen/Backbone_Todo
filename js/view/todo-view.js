@@ -1,3 +1,5 @@
+// requires js/template-helper.js
+
 var TodoView = Backbone.View.extend({
   
   tagName: 'li',
@@ -13,7 +15,8 @@ var TodoView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.$el = $('#todo');
+    // this.$el = $('#todo');
+
     // Later we'll look at:
     // this.listenTo(someCollection, 'all', this.render);
     // but you can actually run this example right now by
@@ -22,6 +25,7 @@ var TodoView = Backbone.View.extend({
 
   // Re-render the titles of the todo item.
   render: function() {
+    // this.$el.html( this.template(this.model.toJSON())); // !TODO: What is the difference?
     this.$el.html( this.template(this.model.attributes));
     this.input = this.$('.edit');
     return this;

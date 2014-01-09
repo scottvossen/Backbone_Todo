@@ -1,12 +1,19 @@
-// Instantiate the Todo Model with a title, with the completed attribute
-// defaulting to false
 var todo1 = new Todo({
-  title: 'Check attributes property of the logged models in the console.'
+  title: 'Relax on couch.'
+});
+var todo2 = new Todo({
+  title: 'Go to mall.'
 });
 
-// create a view for a todo
-var todoView = new TodoView({model: todo1});
+var todoCollection = new TodoCollection([todo1, todo2]);
+
+
+var todoView = new TodoView({ model: todo1 });
 
 todoView.render();
 
-console.log(todoView.el); // logs <li></li>
+var todosView = new TodosView({ model: todoCollection });
+
+todosView.render();
+
+console.log(todosView.el); // logs <li></li>
