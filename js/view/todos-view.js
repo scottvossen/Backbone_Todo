@@ -5,7 +5,7 @@ var TodosView = Backbone.View.extend({
   tagName: 'ul',
   className: 'container',
   id: 'todos',
-
+  container: undefined,
   // template: TemplateHelper.loadTemplate('todos-template'),
 
   events: {
@@ -14,28 +14,37 @@ var TodosView = Backbone.View.extend({
     'blur .edit':   'close'
   },
 
-  initialize: function() {
-    this.$el = $('#todos');
+  initialize: function(params) {
+    // special backbone properties will be handled by default
+    // so only bother with assigning custom properties.
+    // * special backbone properties include:
+    //   model, collection, el, id, className, tagName, attributes and events
+    this.container = params.container;
   },
 
   render: function() {
 
-    // Assume our model exposes the todos we will
-    // display in our list
     // var todos = this.model.get('todos');
     var todos = this.model.models;
 
-    // Loop through each of our todos using the Underscore
-    // _.each iterator
-    _.each(todos, function(todo){
+    _.each(todos, function(todo) {
 
       var todoView = new TodoView({ model: todo });
-
-      // The todoView's DOM element is appended after it
-      // has been rendered. Here, the 'return this' is helpful
-      // as the todoView renders its model. Later, we ask for 
-      // its output ("el")
       this.$el.append(todoView.render().el);
+
     }, this);
+
+    this.container.append(this.el);
+    return this;
   },
-});
+},
+{
+  // static-class level members
+  globalVar: "some-global-var",
+
+  // static-class level functions
+  globalFunc: function() {
+    return "some-global-func";
+  },
+}
+);

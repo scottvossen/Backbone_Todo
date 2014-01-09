@@ -7,13 +7,9 @@ var todo2 = new Todo({
 
 var todoCollection = new TodoCollection([todo1, todo2]);
 
-
-var todoView = new TodoView({ model: todo1 });
-
-todoView.render();
-
-var todosView = new TodosView({ model: todoCollection });
+var todosContainer = $('#todos');
+var todosView = new TodosView({ model: todoCollection, container: todosContainer });
 
 todosView.render();
 
-console.log(todosView.el); // logs <li></li>
+console.log(todosView.el);
