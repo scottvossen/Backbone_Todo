@@ -12,6 +12,7 @@ app.AppView = Backbone.View.extend({
 
   // Our template for the line of statistics at the bottom of the app.
   statsTemplate: _.template( $('#stats-template').html() ),
+  // statsTemplate: TemplateHelper.loadTemplate('stats-template'),
 
   // Delegated events for creating new items, and clearing completed ones.
   events: {

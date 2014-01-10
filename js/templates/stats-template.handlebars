@@ -1,4 +1,4 @@
-<span id="todo-count"><strong>{{remaining}}</strong> {{#if remaining == 1}}item{{else}}items{{/if}} left</span>
+<span id="todo-count"><strong>{{remaining}}</strong> {{#if remaining = 1}}item{{else}}items{{/if}} left</span>
 <ul id="filters">
   <li>
     <a class="selected" href="#/">All</a>
@@ -10,6 +10,6 @@
     <a href="#/completed">Completed</a>
   </li>
 </ul>
-{{if completed}}
+{{#compare completed 0 operator=">"}}
 <button id="clear-completed">Clear completed ({{completed}})</button>
-{{/if}}
+{{/compare}}
